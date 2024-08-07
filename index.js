@@ -20,7 +20,9 @@ const PORT = process.env.PORT || 8000;
 
 // api endpoints
 app.use("/api/user", require("./routes/userRoute"));
-app.use("/api/customer", require("./routes/formRoute"))
+app.use("/api/customer", require("./routes/formRoute"));
+app.use("/api/marketing", require('./routes/marketingRoute'))
+
 
 //check link
 app.get("/", (req, res) => {
