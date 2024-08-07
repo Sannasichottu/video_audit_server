@@ -12,10 +12,11 @@ const formSchema = new mongoose.Schema({
   videosCheck: { type: String, required: true },
   sufficientPlan: { type: String, required: true },
   reelsStraegy: { type: String },
-  remarks: { type: String },
+  remarks: { type: String },  
+
   createdAt: {
     type: Date,
-    default: Date.now,
+    default: Date.now
   },
 });
 

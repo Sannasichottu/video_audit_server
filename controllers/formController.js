@@ -14,7 +14,7 @@ const createCustomerForm = async(req,res) => {
       reelsPlan: req.body.reelsPlan,
       videosCheck: req.body.videosCheck,
       sufficientPlan: req.body.sufficientPlan,
-      reelsStrategy: req.body.reelsStrategy,
+      reelsStraegy: req.body.reelsStraegy,
       remarks: req.body.remarks,
     });
     try {
