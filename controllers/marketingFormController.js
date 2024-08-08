@@ -4,23 +4,21 @@ const marketingModel = require("../models/marketingModel");
 //create marketing form
 const createMarketingForm = async(req,res) => {
     const marketingForm = new marketingModel({
-      customerName: req.body.customerName,
+      newCustomerName: req.body.newCustomerName,
       mobNo: req.body.mobNo,
-      customerAddress: req.body.customerAddress,
+      newCustomerAddress: req.body.newCustomerAddress,
       businessName: req.body.businessName,
       businesstype: req.body.businesstype,
       businessYear: req.body.businessYear,
       dgForYourBusiness:req.body.dgForYourBusiness,
       dgUse: req.body.dgUse,
-      meetingDate: req.body.meetingDate,
-      timeFrom: req.body.timeFrom,
-      timeTo: req.body.timeTo
+      
     });
     try{
         await marketingForm.save();
         res.json({success:true, message:"Your Detail's Added"})
     }catch(err) {
-        console.log(error);
+        console.log(err);
         res.json({success:false,message:"Error"})
     }
 }
