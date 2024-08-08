@@ -22,6 +22,7 @@ const PORT = process.env.PORT || 8000;
 app.use("/api/user", require("./routes/userRoute"));
 app.use("/api/customer", require("./routes/formRoute"));
 app.use("/api/marketing", require('./routes/marketingRoute'))
+app.use("/api/feedback", require("./routes/feedbackRoute"))
 
 
 //check link
