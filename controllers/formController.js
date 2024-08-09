@@ -16,6 +16,7 @@ const createCustomerForm = async(req,res) => {
       sufficientPlan: req.body.sufficientPlan,
       reelsStraegy: req.body.reelsStraegy,
       remarks: req.body.remarks,
+      reelClip:req.body.reelClip
     });
     try {
         await customerForm.save();

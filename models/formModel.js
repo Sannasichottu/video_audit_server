@@ -4,6 +4,7 @@ const formSchema = new mongoose.Schema({
   customerName: { type: String, required: true },
   clientResponse: { type: String },
   shootTime: { type: String },
+  reelClip:{type:String, required:true},
   customerAddress: { type: String, required: true },
   noOfVideo: { type: String, required: true },
   noOfPicture: { type: String, required: true },
