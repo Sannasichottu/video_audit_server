@@ -16,7 +16,8 @@ const createCustomerForm = async(req,res) => {
       sufficientPlan: req.body.sufficientPlan,
       reelsStraegy: req.body.reelsStraegy,
       remarks: req.body.remarks,
-      reelClip:req.body.reelClip
+      reelClip:req.body.reelClip,
+      date:req.body.date
     });
     try {
         await customerForm.save();
@@ -50,4 +51,36 @@ const getSingleCustomerDetail = async(req,res) => {
     }
 }
 
-module.exports = {createCustomerForm,getAllCustomerDetail, getSingleCustomerDetail}
+
+//update customer detail
+const updateCustomerDetail = async(req,res) => {
+    try {
+      const id = req.params.id;
+      const updateDetail = await formModel.findById(id);
+      if(!updateDetail) {
+        return res.status(401).json({msg:"Detail's not found"})
+      }  
+      const updateData = await formModel.findByIdAndUpdate(id, req.body,{new:true});
+      res.status(200).json({msg:"User Update Sccessfully"})
+    } catch (error) {
+        res.status(500).json({error:error})
+    }
+}
+
+
+
+//delete customer detail
+const deletCustomerDetail = async(req,res) => {
+    try {
+        const id = req.params.id;
+        const userExist = await formModel.findById(id);
+        if(!userExist) {
+            return res.status(200).json({msg:"Detail's not found"})
+        }
+        await formModel.findByIdAndDelete(id);
+        res.status(200).json({msg:"User deleted Successfully"})
+    } catch (error) {
+        res.status(500).json({error: error});
+    }
+}
+module.exports = {createCustomerForm,getAllCustomerDetail, getSingleCustomerDetail, updateCustomerDetail, deletCustomerDetail}

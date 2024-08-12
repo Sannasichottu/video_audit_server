@@ -4,7 +4,7 @@ const formSchema = new mongoose.Schema({
   customerName: { type: String, required: true },
   clientResponse: { type: String },
   shootTime: { type: String },
-  reelClip:{type:String, required:true},
+  reelClip:{type:Array, required:true},
   customerAddress: { type: String, required: true },
   noOfVideo: { type: String, required: true },
   noOfPicture: { type: String, required: true },
@@ -14,7 +14,7 @@ const formSchema = new mongoose.Schema({
   sufficientPlan: { type: String, required: true },
   reelsStraegy: { type: String },
   remarks: { type: String },  
-
+  date:{type:String,required:true},
   createdAt: {
     type: Date,
     default: Date.now
