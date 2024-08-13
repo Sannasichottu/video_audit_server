@@ -19,6 +19,6 @@ router.put('/updateCustomer/:id', updateCustomerDetail);
 
 
 //method - delete single customer details
-router.delete('/deleteCustome/:id', deletCustomerDetail);
+router.delete('/deleteCustomer/:id', deletCustomerDetail);
 
 module.exports = router
